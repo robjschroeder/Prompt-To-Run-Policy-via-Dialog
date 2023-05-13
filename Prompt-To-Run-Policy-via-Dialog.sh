@@ -31,14 +31,14 @@
 
 scriptVersion="1.0.0"
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
-scriptLog="${4:-"/var/log/com.company.log"}"														# Company log file
-jamfProPolicyName="${5:-""}"																		# Jamf Pro Policy Name
-jamfProPolicyID="${6:-""}"																			# Jamf Pro Policy ID
-jamfProPolicyAction="${7:-"0"}"																		# Jamf Pro Policy Action [ 0 (view) | 1 (execute) | 2 (silently execute) ]
-messageTitle="${8:-"This is the title of the prompt"}"												# Message Title
-message="${9:-"This is the message of the prompt"}"													# Message
-timeout="${10:-"120"}"																				# Timeout in seconds
-kbArticle="${11:-""}"																				# KB Article Number
+scriptLog="${4:-"/var/log/com.company.log"}"				# Company log file
+jamfProPolicyName="${5:-""}"						# Jamf Pro Policy Name
+jamfProPolicyID="${6:-""}"						# Jamf Pro Policy ID
+jamfProPolicyAction="${7:-"0"}"						# Jamf Pro Policy Action [ 0 (view) | 1 (execute) | 2 (silently execute) ]
+messageTitle="${8:-"This is the title of the prompt"}"			# Message Title
+message="${9:-"This is the message of the prompt"}"			# Message
+timeout="${10:-"120"}"							# Timeout in seconds
+kbArticle="${11:-""}"							# KB Article Number
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
