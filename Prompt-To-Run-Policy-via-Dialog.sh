@@ -216,6 +216,14 @@ updateScriptLog "PRE-FLIGHT CHECK: Complete"
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 function promptUser() {
+
+    if [[ -n "${timeout}" ]] && [[ "${timeout}" != "0" ]]; then
+        moveable="--moveable \\"
+        timeoutOptions="--timer \"$timeout\" \\"
+    else
+        moveable="\\"
+        timeoutOptions="\\"
+    fi
 	
 	updateScriptLog "PROMPT TO RUN POLICY: Prompting user to execute the \"${jamfProPolicyName}\" policy; "
 	if [[ -n $kbArticle ]]; then
@@ -231,8 +239,8 @@ function promptUser() {
 		--infobuttontext \"$kbArticle\" \
 		--infobuttonaction \"https://servicenow.company.com/support?id=kb_article_view&sysparm_article=$kbArticle\" \
 		--small \
-		--moveable \
-		--timer \"$timeout\" \
+        ${moveable}
+		${timeoutOptions}
 		--position 'centre' \
 		--ignorednd \
 		--commandfile \"$dialogCommandFile\" "
@@ -251,8 +259,8 @@ function promptUser() {
 		--titlefont 'size=28' \
 		--messagefont 'size=14' \
 		--small \
-		--moveable \
-		--timer \"$timeout\" \
+        ${moveable}
+		${timeoutOptions}
 		--position 'centre' \
 		--ignorednd \
 		--commandfile \"$dialogCommandFile\" "
